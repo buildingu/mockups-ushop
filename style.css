@@ -1,0 +1,699 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+:root{
+  --slideInAnimation-value: 300px;
+  --slideInAnimation-timing: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  --slideInAnimation-duration: 0.4s;
+  --yellow-color: #efe907;
+  --blue-color: #5fc5ff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,700;1,800&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+/* utility Classes */
+.flex-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
+.outline-wrapper{
+  border: 2.5px solid #efe907;
+}
+
+.blue-card{
+  background-color: #5fc5ff;
+}
+
+.span-yellow{
+  color: #efe907;
+}
+
+.opacity-zero{
+  opacity: 0;
+}
+
+/* Loading animations */
+@keyframes slideInLeft {
+  0%{
+    transform: translate(calc(-1 * var(--slideInAnimation-value)));
+    opacity: 0;
+  }
+  100%{
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleAnimation{
+  0%{
+    transform: scale(0);
+    transform: rotateY(0deg);
+  }
+  90%{
+    transform: rotateY(500deg);
+    transform: scale(2);
+  }
+  100%{
+    transform: scale(1.3);
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes slideInRight {
+  0%{
+    transform: translate(var(--slideInAnimation-value));
+    opacity: 0;
+  }
+  100%{
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  0%{
+    transform: translate(0, var(--slideInAnimation-value));
+    opacity: 0;
+  }
+  100%{
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+/* Styling nav */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    min-height: 2.5rem;
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    position: relative;
+    z-index: 10000000; /* To ensure nav always stays over every other element */
+    padding: 2rem 0;
+  }
+
+  .nav > .nav-header {
+    display: inline;
+    margin: 0 1rem;
+  }
+
+  .nav > .nav-header > .nav-title > a > img{
+    max-width: 70px;
+    width: 85%;
+  }
+
+  .nav > .nav-btn {
+    display: none;
+  }
+
+  .nav > .nav-links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+  }
+
+  .nav > .nav-links > a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: black;
+    position: relative;
+  }
+
+  .nav > #nav-check {
+    display: none;
+  }
+
+  /* Underline animation */
+  .nav > .nav-links > a::after{
+    content: '';
+    position: absolute;
+    width: 80%;
+    transform: scaleX(0);
+    height: 3px;
+    top: 70%;
+    left: 10%;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .nav > .nav-links > a:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  @media (max-width:650px) {
+    .nav{
+        padding: 0;
+
+    }
+    .nav > .nav-header > .nav-title > a > img{
+        width: 75%;
+      }
+    .nav > .nav-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+    .nav > .nav-btn > label {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding: 13px;
+    }
+    .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+      background-color: #035985
+    }
+    .nav  #nav-check:checked ~ .nav-btn > label > span{
+        border-color: white;
+    }
+    .nav > .nav-btn > label > span {
+      display: block;
+      width: 25px;
+      height: 10px;
+      border-top: 5px solid black;
+    }
+    .nav > .nav-links {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: #fffedb;
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 50px;
+      left: 0px;
+      text-align: center;
+      /* padding: 2rem 0 0 0; */
+      font-size: 1.3rem;
+    }
+
+    .nav #nav-check:checked ~ .nav-links{
+        padding: 1rem 0 0 0;
+    }
+    .nav > .nav-links > a {
+      display: block;
+      width: 100%;
+    }
+    .nav > .nav-links > a {
+        margin-bottom: 1rem;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+      height: 0px;
+
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+    }
+    .nav > .nav-links > a:hover {
+        background-color: rgba(0, 0, 0, 0.102);
+      }
+  }
+
+/* Styling main page */
+.header-container{
+    /* positioning */
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative; */
+    overflow: hidden;
+    /* padding: 1rem; */
+    /* font */
+    /* font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    text-shadow: 2px 3px 5px rgba(0,0,0,0.5); */
+    /* dimensions and border */
+    /* height: 50vh; */
+    /* background */
+    background-color: white;
+    background-image: url(drive-download-20220130T004857Z-001/U-Shop-Page/Header.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    -ms-background-size: contain;
+    -o-background-size: contain;
+    -moz-background-size: contain;
+    -webkit-background-size: contain;
+    background-size: contain;
+    animation: slideUp var(--slideInAnimation-duration) var(--slideInAnimation-timing);
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    height: 50vh;
+}
+
+/* .header-container::before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.9;
+    background-repeat: no-repeat;
+    background-position: center;
+    -ms-background-size: contain;
+    -o-background-size: contain;
+    -moz-background-size: contain;
+    -webkit-background-size: contain;
+    background-size: contain;
+} */
+
+/* Gifts-U-Can-Choose */
+
+.gifts-u-choose-div{
+  background-color: #5fc5ff;
+  padding: 0.7rem;
+  margin-top: 3rem;
+  position: relative;
+  width: 80%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transform: scale(1);
+  transition: all 0.3s ease-out;
+  animation: slideInLeft var(--slideInAnimation-duration) var(--slideInAnimation-timing);
+}
+
+.gifts-u-choose-div > .gifts-u-choose-h2{
+  color: white;
+  border: 2.5px solid #efe907;
+  text-align: center;
+  margin: 0;
+  padding: 0.4rem;
+  font-size: 2rem;
+
+}
+
+.gift-img{
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  top: -1rem;
+  text-align: center;
+  z-index: 1;
+  opacity: 1;
+  /* border: 1px solid red; */
+  transition: all 0.2s ease-out;
+}
+
+.gift-img > img{
+  width: 50%;
+
+}
+
+.gift-img-left{
+  left: -5rem;
+  transform: rotate(-25.5deg);
+}
+
+.gift-img-right{
+  right: -5rem;
+  transform: rotateZ(-25.5deg);
+}
+
+/* hover states */
+.gifts-u-choose-div:hover .gift-img-left,
+.gifts-u-choose-div:focus .gift-img-left{
+  left: -12%;
+  transform: rotate(-51deg);
+}
+.gifts-u-choose-div:hover .gift-img-right,
+.gifts-u-choose-div:focus .gift-img-right{
+  right: -12%;
+  transform: rotate(0deg);
+}
+
+.gifts-u-choose-div:hover,
+.gifts-u-choose-div:focus{
+  transform: scale(1.05);
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+/* Shop and share section */
+
+.shop-and-share-section{
+  padding: 0 10rem;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  width: 100vw;
+  /* Grid approach */
+  /* display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto auto;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px; */
+  /* justify-items: stretch;
+  align-items: stretch; */
+
+  /* flex approach */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.shop-and-share-section li, .shop-card-checkbox-container label{
+  font-size: 1.5rem;
+}
+
+.outline-wrapper{
+  flex-direction: column;
+  padding: 1rem 0.5rem;
+}
+
+.shop-card,
+.share-card{
+  padding: .87rem;
+  max-width: 30rem;
+  text-align: center;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.shop-card{
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
+.outline-wrapper > h1,
+.outline-wrapper > h2{
+  margin: 0;
+  padding: 0;
+  z-index: 100000000000;
+}
+
+
+.shop-card > .outline-wrapper > img{
+  width: 40%;
+  margin-top: 1rem;
+  z-index: 1;
+}
+
+
+.share-card > .outline-wrapper > .img-wrapper > a > img{
+  width: 50%;
+  display: block;
+}
+
+.share-card > .outline-wrapper {
+  height: 100%;
+}
+
+.shop-card-checkbox-container{
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.shop-card-checkbox-container > input[type="checkbox"]{
+  margin-top: 1rem;
+}
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: white;
+  /* Not removed via appearance */
+  margin: 0;
+
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  position: relative;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  background-color: #e6de05;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: scale(2);
+  transform: rotate(400deg);
+}
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+input[type="checkbox"]:disabled {
+  --form-control-color: var(--form-control-disabled);
+
+  color: var(--form-control-disabled);
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.shop-card:hover .checkbox:first-child::before{
+  animation: scaleAnimation 0.5s cubic-bezier(1, 2.24, 1, 1.18);
+}
+
+.shop-card:hover .checkbox2::before{
+  animation: scaleAnimation 0.5s cubic-bezier(1, 2.24, 1, 1.18) 0.1s;
+}
+
+.shop-card:hover .checkbox3::before{
+  animation: scaleAnimation 0.5s cubic-bezier(1, 2.24, 1, 1.18) 0.2s;
+}
+
+
+.shop-card{
+  animation: slideInLeft var(--slideInAnimation-duration) var(--slideInAnimation-timing);
+
+}
+
+/* shop and share section - upointz and share card */
+
+/* upointz card */
+.upointz-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.find-upointz{
+  color: black;
+}
+
+.upointz-form{
+  display: flex;
+}
+
+.upointz-display-div{
+  margin-left: 2rem
+}
+
+
+
+.upointz-input{
+  font-size: 1.3rem;
+  outline: none;
+}
+
+.email-input, .gift-card-input{
+  position: relative;
+}
+
+.gift-card-input{
+  margin-top: 2rem;
+}
+
+.upointz-email-label, .upointz-gift-card-label{
+  position: absolute;
+  top: 1.1rem;
+  left: 1rem;
+  margin: 0 auto;
+  width: 100%;
+  color: #31303085;
+  transition: 0.2s all;
+  cursor: text;
+  font-size: 1.5rem;
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 0.1s ease-in;
+}
+
+.upointz-email-input, .upointz-gift-card-input{
+  border: 3px solid var(--blue-color);
+  padding: 1rem 1rem;
+}
+
+.upointz-display{
+  border: 3px solid var(--blue-color);
+  text-align: center;
+  padding: 1rem;
+}
+
+.upointz-display > p{
+  margin: 0;
+  padding: 0;
+}
+
+.upointz-display .upointz{
+  font-size: 6rem;
+  font-weight: bold;
+}
+
+.upointz-display .upointz-heading{
+  font-size: 1.3rem;
+}
+
+.upointz{
+  /* text-shadow: 0px 15px 5px rgba(0,0,0,0.1),
+                 10px 20px 5px rgba(0,0,0,0.05),
+                 -10px 20px 5px rgba(0,0,0,0.05); */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* background-color: #efe907;
+  background-image: linear-gradient(45deg, #efe707b9 0%, #efe707c5 27%, #5fc5ff 81%); */
+  background-color: #FA8BFF;
+background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+
+
+
+
+
+}
+
+.upointz-display-div svg{
+  margin-left: 2rem;
+}
+
+/* share card */
+.share-card{
+  animation: slideInRight var(--slideInAnimation-duration) var(--slideInAnimation-timing);
+  word-break: keep-all;
+  margin-top: 2rem;
+}
+
+/* .share-card > .outline-wrapper {
+  padding: 0 5rem;
+} */
+
+.share-card > .outline-wrapper > .flex-wrapper{
+  justify-content: space-between;
+}
+
+.share-card > .outline-wrapper > .flex-wrapper > .wrapper{
+  width: 210%;
+  /* margin-right: 10rem; */
+}
+
+.share-card > .outline-wrapper > .flex-wrapper > .img-wrapper > a > img{
+  /* border: 1px solid black; */
+  text-decoration: none;
+  width: 150%;
+  /* max-width: 100%; */
+
+
+}
+
+.share-card > .outline-wrapper > .flex-wrapper > .img-wrapper{
+  /* margin-left: 15rem; */
+  width: 150%;
+  margin-right: 5rem;
+}
+
+.share-card > .outline-wrapper > .share-card-info{
+  /* width: 160%; */
+}
+
+.share-card:hover .share-card > .outline-wrapper > .img-wrapper > a > img{
+  transform: translateZ(-25.5deg);
+}
+
+.img-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.share-card > .outline-wrapper > h1{
+  margin-top: 1rem;
+}
+
+.share-card > .outline-wrapper > ul {
+  width: 90%;
+  font-size: 1.2rem;
+  margin: 0;
+  text-align: left;
+}
+
+.share-card > .outline-wrapper > ul > li{
+  margin-top: 1rem;
+}
+
+
+@media (max-width: 760px){
+  .shop-and-share-section{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .share-card{
+    /* margin-top: 1rem */
+  }
+}
+
+@media (max-width: 845px){
+  .gift-img-left{
+    top: 2rem;
+    left: -7rem;
+    transform: rotate(-50deg);
+  }
+
+  .gift-img-right{
+    top: 2rem;
+    right: -6.75rem;
+    transform: rotateZ(0);
+  }
+
+  .gifts-u-choose-div:focus,
+  .gifts-u-choose-div:hover{
+    transform: rotate(0);
+  }
+  .gifts-u-choose-div:hover .gift-img-left,
+  .gifts-u-choose-div:focus .gift-img-left{
+    left: -7rem;
+  }
+  .gifts-u-choose-div:hover .gift-img-right,
+  .gifts-u-choose-div:focus .gift-img-right{
+    right: -6.75rem;
+  }
+
+}
