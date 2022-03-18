@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<link href="libs/fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet" />
 
 <head>
   <meta charset="UTF-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Basic Grid</title>
   <link href="shopping-grid.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/1c3faa05db.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -21,6 +21,21 @@
       Lorem duis laboris cupidatat Nostrud officia pariaturjj ut officia. Sit
       irure elit esse ea nulla sunt ex officia voluptate.
     </p>
+    <button class="shopping-menu" onclick="document.getElementById('modal').style.display='block'">
+      <i class='fas fa-shopping-cart' style="font-size: 2rem;"></i>
+    </button>
+    <div id="modal">
+      <div class="shopping-header">
+        <h2 class="item-headers">Shopping Menu:</h2>
+        <span class="close" onclick="document.getElementById('modal').style.display='none'">
+          &times;
+        </span>
+      </div>
+      <div class="menu-item">
+        <p style="font-size: 1rem;">U-TEEZ</p>
+        <p style="margin: 1rem; font-size: 1rem;">20</p>
+      </div>
+    </div>
   </header>
   <section>
     <h2 class="item-headers">T-SHIRTS</h2>
@@ -29,36 +44,36 @@
       cillum sint consectetur cupidatat.
     </p>
     <div class="item-grid">
-          <a href="shopping-item.html">
-            <div class="item">
-              <img class="product-img"
-                src="https://cdn.shopify.com/s/files/1/0350/6143/2456/products/shirt3_42087e40-ec89-4265-9aed-b499ee388ef3_1024x1024@2x.png?v=1632501751" />
-              <div class="item-desc">
-                <p class="item-name">U-TEEZ</p>
-                <p class="item-price"><strong>12</strong></p>
-              </div>
-            </div>
-          </a>
-          <a href="shopping-item.html">
-            <div class="item">
-              <img class="product-img"
-                src="https://cdn.shopify.com/s/files/1/0350/6143/2456/products/shirt3_42087e40-ec89-4265-9aed-b499ee388ef3_1024x1024@2x.png?v=1632501751" />
-              <div class="item-desc">
-                <p class="item-name">U-TEEZ</p>
-                <p class="item-price"><strong>12</strong></p>
-              </div>
-            </div>
-          </a>
-          <a href="shopping-item.html">
-            <div class="item">
-              <img class="product-img"
-                src="https://cdn.shopify.com/s/files/1/0350/6143/2456/products/shirt3_42087e40-ec89-4265-9aed-b499ee388ef3_1024x1024@2x.png?v=1632501751" />
-              <div class="item-desc">
-                <p class="item-name">U-TEEZ</p>
-                <p class="item-price"><strong>12</strong></p>
-              </div>
-            </div>
-          </a>
+      <a href="shopping-item.html">
+        <div class="item">
+          <img class="product-img"
+            src="https://cdn.shopify.com/s/files/1/0350/6143/2456/products/shirt3_42087e40-ec89-4265-9aed-b499ee388ef3_1024x1024@2x.png?v=1632501751" />
+          <div class="item-desc">
+            <p class="item-name">U-TEEZ</p>
+            <p class="item-price"><strong>12</strong></p>
+          </div>
+        </div>
+      </a>
+      <a href="shopping-item.html">
+        <div class="item">
+          <img class="product-img"
+            src="https://cdn.shopify.com/s/files/1/0350/6143/2456/products/shirt3_42087e40-ec89-4265-9aed-b499ee388ef3_1024x1024@2x.png?v=1632501751" />
+          <div class="item-desc">
+            <p class="item-name">U-TEEZ</p>
+            <p class="item-price"><strong>12</strong></p>
+          </div>
+        </div>
+      </a>
+      <a href="shopping-item.html">
+        <div class="item">
+          <img class="product-img"
+            src="https://cdn.shopify.com/s/files/1/0350/6143/2456/products/shirt3_42087e40-ec89-4265-9aed-b499ee388ef3_1024x1024@2x.png?v=1632501751" />
+          <div class="item-desc">
+            <p class="item-name">U-TEEZ</p>
+            <p class="item-price"><strong>12</strong></p>
+          </div>
+        </div>
+      </a>
       </ul>
     </div>
   </section>
