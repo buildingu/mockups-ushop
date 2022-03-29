@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,700;1,800&display=swap');
+
 *, *::after, *::before{
     box-sizing: border-box;
     margin: 0;
@@ -11,8 +13,6 @@
   --yellow-color: #efe907;
   --blue-color: #5fc5ff;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,700;1,800&display=swap');
 
 body{
     margin: 0;
@@ -63,7 +63,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 80%;
     margin-left: 10%;
   }
@@ -163,7 +163,7 @@ body{
   margin-top: 3rem;
   position: relative;
   width: 80%;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
   transform: scale(1);
   transition: all 0.3s ease-out;
   animation: slideInLeft var(--slideInAnimation-duration) var(--slideInAnimation-timing);
@@ -221,7 +221,7 @@ body{
 .gifts-u-choose-div:hover,
 .gifts-u-choose-div:focus{
   transform: scale(1.05);
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px 0 inset, rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px;
 }
 
 /* Shop and share section */
@@ -260,7 +260,7 @@ body{
   padding: .87rem;
   width: 33%;
   text-align: center;
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px 0 inset, rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px;
 }
 
 .shop-card{
@@ -327,7 +327,6 @@ input[type="checkbox"]::before {
   height: 0.65em;
   background-color: #e6de05;
   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-  transform: scale(0);
   transform-origin: bottom left;
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em var(--form-control-color);
@@ -375,7 +374,7 @@ input[type="checkbox"]:disabled {
     width: 60%;
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin-left: 11%;
 }
 
@@ -417,7 +416,6 @@ input[type="checkbox"]:disabled {
   margin: 0 auto;
   width: 100%;
   color: #31303085;
-  transition: 0.2s all;
   cursor: text;
   font-size: 1.5rem;
   pointer-events: none;
