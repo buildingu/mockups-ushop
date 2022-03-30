@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="libs/fontawesome-free-6.1.1-web/css/all.css">
+</head>
+<body>
+    <header class="banner">
+        <div class="banner-wrapper">
+            <h1 class="title">Your Faves</h1>
+        </div>
+    </header>
+    <div class="accordion">
+        <button class="accordion-btn" id="profile-btn">
+            <i class="fa-solid fa-user-astronaut"></i>
+            <span>Your profile</span>
+            <i class="fa-solid fa-caret-right expand"></i>
+        </button>
+        <div class="profile hidden" id="profile-section">
+            <form action="">
+                <div class="form-row">
+                    <div class="form-input half-row">
+                        <input type="text" name="first_name" autocomplete="off" required>
+                        <label for="first_name" class="form-input-label">
+                            <span class="label">First Name</span>
+                        </label>
+                    </div>
+                    <div class="form-input half-row">
+                        <input type="text" name="last_name" autocomplete="off" required>
+                        <label for="last_name" class="form-input-label">
+                            <span class="label">Last Name</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-input full-row">
+                        <input type="text" name="address" autocomplete="off" required>
+                        <label for="address" class="form-input-label">
+                            <span class="label">Address</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-input full-row">
+                        <input type="text" name="phone" autocomplete="off" required>
+                        <label for="phone" class="form-input-label">
+                            <span class="label">Phone</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="custom-select full-third">
+                        <select name="country">
+                            <option value="">Country</option>
+                            <option value="">Test 2</option>
+                            <option value="">Test 3</option>
+                            <option value="">Test 4</option>
+                        </select>
+                        <span class="custom-arrow"></span>
+                    </div>
+                    <div class="custom-select full-third">
+                        <select name="state">
+                            <option value="">State</option>
+                            <option value="">Test 2</option>
+                            <option value="">Test 3</option>
+                            <option value="">Test 4</option>
+                        </select>
+                        <span class="custom-arrow"></span>
+                    </div>            
+                    <div class="custom-select full-third">
+                        <select name="city">
+                            <option value="">City</option>
+                            <option value="">Test 2</option>
+                            <option value="">Test 3</option>
+                            <option value="">Test 4</option>
+                        </select>
+                        <span class="custom-arrow"></span>
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="custom-select half-row">
+                        <select name="education">
+                            <option value="">Education</option>
+                            <option value="">Test 2</option>
+                            <option value="">Test 3</option>
+                            <option value="">Test 4</option>
+                        </select>
+                        <span class="custom-arrow"></span>
+                    </div>
+                    <div class="custom-select full-third">
+                        <select name="gender">
+                            <option value="">Gender</option>
+                            <option value="">Test 2</option>
+                            <option value="">Test 3</option>
+                            <option value="">Test 4</option>
+                        </select>
+                        <span class="custom-arrow"></span>
+                    </div>  
+                </div>
+            </form>
+        </div>
+        <button class="accordion-btn mt-3" id="gift-card-btn">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <span>Your gift cards</span>
+            <i class="fa-solid fa-caret-right expand"></i>
+        </button>
+        <div class="gift-card hidden" id="gift-card-section">
+            <table class="gift-card-table mt-3">
+                <tr>
+                  <th>Serial Number</th>
+                  <th>Total</th>
+                  <th>Remaining</th>
+                </tr>
+                <tr>
+                  <td>QWERTY</td>
+                  <td>12</td>
+                  <td>6</td>
+                </tr>
+                <tr>
+                    <td>QWERTY</td>
+                    <td>12</td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <td>QWERTY</td>
+                    <td>12</td>
+                    <td>6</td>
+                  </tr>
+              </table>
+        </div>
+    </div>
+
+    <script src="libs/jquery/jquery.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $("#profile-btn").on('click', () => {
+                $("#profile-section").toggleClass("hidden");
+            });
+
+            $("#gift-card-btn").on('click', () => {
+                $("#gift-card-section").toggleClass("hidden");
+            });
+        });
+    </script>
+</body>
+</html>
