@@ -80,6 +80,7 @@ select {
 :root {
     --primary: #5FC5FF;
     --secondary: #F9FF00;
+    --accent: #B20202;
     --button-color: #699EBC;
     --button-accent: white;
     --content-width: 80%;
@@ -124,6 +125,18 @@ body {
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
 }
+/* WELCOME */
+.welcome {
+    width: var(--content-width);
+    padding-top: 5vmin;
+}
+
+.welcome-message {
+    font-family: 'Euphoria Script', cursive;
+    color: var(--accent);
+    font-size: 1.4em;
+    letter-spacing: 1px;
+}
 
 /* ACCORDION */
 .accordion {
@@ -166,9 +179,6 @@ body {
     margin-top: .25em;
 }
 
-.profile-btn {
-    margin-top: 12vmin;
-}
 
 /* PROFILE */
 .profile {
