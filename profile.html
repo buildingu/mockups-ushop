@@ -7,91 +7,105 @@
     <title>Profile</title>
     <link rel="stylesheet" href="profile.css">
     <link rel="stylesheet" href="libs/fontawesome-free-6.1.1-web/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <header class="banner">
         <div class="banner-wrapper">
-            <h1 class="title">Your Faves</h1>
+            <h1 class="title">My Faves</h1>
         </div>
     </header>
     <div class="accordion">
-        <button class="accordion-btn" id="profile-btn">
-            <i class="fa-solid fa-user-astronaut"></i>
-            <span>Your profile</span>
-            <i class="fa-solid fa-caret-right expand"></i>
+        <!-- PROFILE BUTTON -->
+        <button class="accordion-btn profile-btn" id="profile-btn">
+            <div class="btn-left">
+                <i class="fa-solid fa-plus icon" id="profile-btn"></i>
+            </div>
+            <div class="btn-right">
+                <span>My profile</span>
+                <i class="fa-solid fa-user-astronaut icon icon-margin-top"></i>
+            </div>
         </button>
+        <!-- PROFILE SECTION -->
         <div class="profile hidden" id="profile-section">
             <form action="">
-                <div class="form-row">
-                    <div class="form-input half-row">
-                        <input type="text" name="first_name" autocomplete="off" required>
-                        <label for="first_name" class="form-input-label">
-                            <span class="label">First Name</span>
-                        </label>
-                    </div>
-                    <div class="form-input half-row">
-                        <input type="text" name="last_name" autocomplete="off" required>
-                        <label for="last_name" class="form-input-label">
-                            <span class="label">Last Name</span>
-                        </label>
-                    </div>
-                </div>                
-                <div class="form-row mt-3">
-                    <div class="custom-select full-third">
-                        <select name="country">
-                            <option value="">Country</option>
-                            <option value="">Test 2</option>
-                            <option value="">Test 3</option>
-                            <option value="">Test 4</option>
-                        </select>
-                        <span class="custom-arrow"></span>
-                    </div>
-                    <div class="custom-select full-third">
-                        <select name="state">
-                            <option value="">State</option>
-                            <option value="">Test 2</option>
-                            <option value="">Test 3</option>
-                            <option value="">Test 4</option>
-                        </select>
-                        <span class="custom-arrow"></span>
-                    </div>            
-                    <div class="custom-select full-third">
-                        <select name="city">
-                            <option value="">City</option>
-                            <option value="">Test 2</option>
-                            <option value="">Test 3</option>
-                            <option value="">Test 4</option>
-                        </select>
-                        <span class="custom-arrow"></span>
-                    </div>
+                <div class="form-input">
+                    <input type="text" name="first_name" autocomplete="off" required>
+                    <label for="first_name" class="form-input-label">
+                        <span class="label">First Name</span>
+                    </label>
                 </div>
-                <div class="form-row mt-3">
-                    <div class="custom-select half-row">
-                        <select name="education">
-                            <option value="">Education</option>
-                            <option value="">Test 2</option>
-                            <option value="">Test 3</option>
-                            <option value="">Test 4</option>
-                        </select>
-                        <span class="custom-arrow"></span>
-                    </div>
-                    <div class="custom-select full-third">
-                        <select name="gender">
-                            <option value="">Gender</option>
-                            <option value="">Test 2</option>
-                            <option value="">Test 3</option>
-                            <option value="">Test 4</option>
-                        </select>
-                        <span class="custom-arrow"></span>
-                    </div>  
+                <div class="form-input">
+                    <input type="text" name="last_name" autocomplete="off" required>
+                    <label for="last_name" class="form-input-label">
+                        <span class="label">Last Name</span>
+                    </label>
                 </div>
+                <div class="custom-select">
+                    <select name="country" class="dropdown">
+                        <option value="" class="dropdown-option">Country</option>
+                        <option value="" class="dropdown-option">Test 2</option>
+                        <option value="" class="dropdown-option">Test 3</option>
+                        <option value="" class="dropdown-option">Test 4</option>
+                    </select>
+                    <span class="custom-arrow"></span>
+                </div>
+                <div class="custom-select">
+                    <select name="state" class="dropdown">
+                        <option value="">State</option>
+                        <option value="">Test 2</option>
+                        <option value="">Test 3</option>
+                        <option value="">Test 4</option>
+                    </select>
+                    <span class="custom-arrow"></span>
+                </div>
+                <div class="custom-select">
+                    <select name="city" class="dropdown">
+                        <option value="">City</option>
+                        <option value="">Test 2</option>
+                        <option value="">Test 3</option>
+                        <option value="">Test 4</option>
+                    </select>
+                    <span class="custom-arrow"></span>
+                </div>
+                <div class="custom-select">
+                    <select name="education" class="dropdown">
+                        <option value="">Education</option>
+                        <option value="">Test 2</option>
+                        <option value="">Test 3</option>
+                        <option value="">Test 4</option>
+                    </select>
+                    <span class="custom-arrow"></span>
+                </div>
+                <div class="custom-select">
+                    <select name="gender" class="dropdown">
+                        <option value="">Gender</option>
+                        <option value="">Test 2</option>
+                        <option value="">Test 3</option>
+                        <option value="">Test 4</option>
+                    </select>
+                    <span class="custom-arrow"></span>
+                </div> 
+                <div class="form-input">
+                    <button class="submit-btn">
+                        <span>Submit</span>
+                    </button>
+                </div> 
             </form>
         </div>
+        <!-- U POINTS BUTTON -->
         <button class="accordion-btn mt-3" id="gift-card-btn">
-            <i class="fa-solid fa-hand-holding-heart"></i>
-            <span>Your gift cards</span>
-            <i class="fa-solid fa-caret-right expand"></i>
+            <div class="btn-left">
+                <i class="fa-solid fa-plus icon" id="u-points-btn"></i>
+            </div>
+            <div class="btn-right">
+                <span>My upoints</span>
+                <i class="fa-solid fa-hand-holding-heart icon"></i>
+            </div>
         </button>
+        <!-- U POINTS SECTION -->
         <div class="gift-card hidden" id="gift-card-section">
             <table class="gift-card-table mt-3">
                 <tr>
@@ -125,7 +139,7 @@
                 $("#profile-section").toggleClass("hidden");
             });
 
-            $("#gift-card-btn").on('click', () => {
+            $("#u-points-btn").on('click', () => {
                 $("#gift-card-section").toggleClass("hidden");
             });
         });

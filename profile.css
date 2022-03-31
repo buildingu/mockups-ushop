@@ -79,10 +79,13 @@ select {
 
 :root {
     --primary: #5FC5FF;
-    --secondary: #FFFF01;
-    --button-color: #2B3D41;
-    --button-accent: #BDBEA9;
-    --form-text: #595F6E;
+    --secondary: #F9FF00;
+    --button-color: #699EBC;
+    --button-accent: white;
+    --content-width: 80%;
+    --select-color: #8BC5E1;
+    --option-bg: #cce7f1;
+    --option-color: #4A85A6;
 }
 
 /* ===== PROFILE ===== */
@@ -91,43 +94,40 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 16px;
+    font-family: 'Raleway';
 }
 /* BANNER */
 .banner {
-    width: 70%;
-    background-color: var(--primary);
-    height: 40vh;
+    width: var(--content-width);
     margin-top: 10vh;
     border-radius: 3vmin;
     position: relative;
 }
 
 .banner-wrapper {
-    width: calc(99% - 1vmin);
     margin: 1vmin;
-    border: 3px solid var(--secondary);
+    border: 5px solid var(--primary);
     position: relative;
-    height: 38vh;
     opacity: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 3vmin;
+    padding: 1rem 0;
 }
 
 .banner .title {
-    color: white;
+    color: var(--secondary);
+    text-shadow: 2px 2px var(--primary) ;
     text-align: center;
-    font-size: 5rem;
-    text-shadow: -2px 3px #002699;
+    font-size: 2rem;
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
 }
 
 /* ACCORDION */
-.accordion {    
-    width: 70%;
-    margin-top: 5vmin;
+.accordion {
+    width: var(--content-width);
 }
 .accordion-btn {
     width: 100%;
@@ -136,20 +136,38 @@ body {
     padding: 3vmin 0;
     font-size: 2rem;
     border: 1px solid var(--button-accent);
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+.accordion-btn .btn-left {
+    margin-left: .5em;
+}
+
+.accordion-btn .btn-right {
+    display: flex;
+    justify-content: start;
+    margin-right: .4em;
 }
 .accordion-btn span {
     margin-right: 5vmin;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    margin-left: .7em;
+    margin-top: .3em;
 }
-.expand {
-    cursor: pointer;
-    -webkit-transition: -webkit-transform .8s ease-in-out;
-    -ms-transition: -ms-transform .8s ease-in-out;
-    transition: transform 200ms ease-in-out;
+
+ .icon {
+    font-size: .9em;
+    padding-top: .1em;
+    margin-top: .1em;
 }
-.expand:hover {
-    transform:rotate(90deg);
-    -ms-transform:rotate(90deg);
-    -webkit-transform:rotate(90deg);
+.icon-margin-top {
+    margin-top: .25em;
+}
+
+.profile-btn {
+    margin-top: 12vmin;
 }
 
 /* PROFILE */
@@ -163,16 +181,12 @@ body {
     width: 80%;
 }
 
-.form-row {
-    padding: 1vmin 0;
-    width: 100%;
-    display: flex;
-}
 /* form inputs */
 .form-input {
     position: relative;
     overflow-y: hidden;
-    height: 10vmin;
+    height: 20vmin;
+    margin-top: 3vmin;
 }
 .form-input input {
     height: 100%;
@@ -223,21 +237,20 @@ body {
     transform: translateX(0%);
 }
 /* form selects */
-select {
-    padding: 1.5vmin 1vmin;
+.dropdown {
+    padding: 3vmin 1vmin;
     width: 100%;
     height: 100%;
     font-size: 1.2rem;
     font-weight: bold;
-    background-color: var(--button-color);
+    background-color: var(--select-color);
     color: var(--button-accent);
     border: 0;
 }
-
 .custom-select {
     position: relative;
+    margin-top: 7vmin;
 }
-
 .custom-arrow {
     position: absolute;
     padding: 0.5em 1em;
@@ -248,35 +261,54 @@ select {
     background-color: var(--button-accent);
     top: 0;
     right: 0;
+    border: 1px solid var(--select-color);
     pointer-events: none;
 }
-
 .custom-arrow::after, .custom-arrow::before {
     --size: .5em;
     content: '';
     position: absolute;
     width: 0;
     height: 0;
-    left: 50%;
+    left: 50%;    
     transform: translate(-50%, -50%);
 }
-
 .custom-arrow::before {
     border-left: var(--size) solid transparent;
     border-right: var(--size) solid transparent;
-    border-bottom: var(--size) solid var(--button-color);
+    border-bottom: var(--size) solid var(--select-color);
     top:35%;
 }
-
 .custom-arrow::after {
     border-left: var(--size) solid transparent;
     border-right: var(--size) solid transparent;
-    border-top: var(--size) solid var(--button-color);
+    border-top: var(--size) solid var(--select-color);
     top:65%;
 }
+.dropdown-option {
+    background-color: var(--option-bg);
+    color: var(--option-color);
 
+}
+.submit-btn {
+    width: var(--content-width);
+    margin-top: 1rem;
+    margin-left: 10%;
+    border: 0;
+    background-color: var(--button-color);
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.submit-btn span {
+    margin-top: .3em;
+    padding-bottom: .4em;
+}
 /* gift card */
-
 .gift-card-table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
