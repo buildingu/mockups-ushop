@@ -249,6 +249,12 @@ header, .info {
     top: 540px;
 }
 
+.error-handling {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
 @media screen and (max-width: 768px) {
     .delete768 {
         display: none;
