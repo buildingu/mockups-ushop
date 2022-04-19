@@ -91,6 +91,18 @@ body{
     opacity: 1;
   }
 }
+@keyframes dottedLineAnimation {
+  0%{
+    transform: translate(0, var(--slideInAnimation-value));
+    transform: scale(0);
+    opacity: 0;
+  }
+  100%{
+    transform: translate(0, 0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 /* Styling nav */
 .nav {
     display: flex;
@@ -228,6 +240,15 @@ body{
   }
 
 /* Styling main page */
+.header-flex-wrapper{
+  margin-top: 2rem;
+  position: relative;
+}
+.border-wrapper{
+  background-color: var(--blue-color);
+  padding: .7rem;
+  position: relative;
+}
 .header-container{
     /* positioning */
     /* display: flex;
@@ -235,7 +256,7 @@ body{
     align-items: center;
     flex-direction: column;
     position: relative; */
-    overflow: hidden;
+    /* overflow: hidden; */
     /* padding: 1rem; */
     /* font */
     /* font-family: 'Open Sans', sans-serif;
@@ -246,8 +267,8 @@ body{
     /* dimensions and border */
     /* height: 50vh; */
     /* background */
-    background-color: white;
-    background-image: url(drive-download-20220130T004857Z-001/U-Shop-Page/Header.png);
+    background-color: var(--blue-color);
+    /* background-image: url(drive-download-20220130T004857Z-001/U-Shop-Page/Header.png); */
     background-repeat: no-repeat;
     background-position: center;
     -ms-background-size: contain;
@@ -256,13 +277,62 @@ body{
     -webkit-background-size: contain;
     background-size: contain;
     animation: slideUp var(--slideInAnimation-duration) var(--slideInAnimation-timing);
-    padding: 0;
+    padding: 5rem 19rem;
     margin: 0;
     max-width: 100%;
-    height: 50vh;
+    height: 60vh;
+    font-size: clamp(6rem, 12vw, 15rem);
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    border: 4px solid #efe907;
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
 }
 
-/* .header-container::before{
+.header-container p{
+  padding: 0;
+  margin: 0;
+  z-index: 10;
+}
+.header-container p:first-child{
+  padding: 0;
+  margin: 0;
+  font-size: 8rem;
+  /* text-align: left; */
+  /* align-items: flex-start; */
+}
+
+.header-container p:last-child{
+  text-align: center;
+}
+
+.border-wrapper::after{
+  content: '';
+  display: block;
+  position: absolute;
+  left: -3rem;
+  top: -15rem;
+  width: 10%;
+  height: 100%;
+  z-index: 100;
+  opacity: 1;
+  background-image: url(img/banner/PNG/welcome-tag.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  -ms-background-size: contain;
+  -o-background-size: contain;
+  -moz-background-size: contain;
+  -webkit-background-size: contain;
+  background-size: contain;
+  /* animation: dottedLineAnimation var(--slideInAnimation-duration) var(--slideInAnimation-timing); */
+  /* animation-delay: 0.2s; */
+  /* transition: 0.1s ease-in-out; */
+}
+
+.header-container::before{
     content: '';
     display: block;
     position: absolute;
@@ -271,7 +341,8 @@ body{
     width: 100%;
     height: 100%;
     z-index: 1;
-    opacity: 0.9;
+    opacity: 1;
+    background-image: url(img/banner/PNG/b-U_bounce.png);
     background-repeat: no-repeat;
     background-position: center;
     -ms-background-size: contain;
@@ -279,7 +350,16 @@ body{
     -moz-background-size: contain;
     -webkit-background-size: contain;
     background-size: contain;
-} */
+    animation: dottedLineAnimation var(--slideInAnimation-duration) var(--slideInAnimation-timing);
+    /* animation-delay: 0.2s; */
+    transition: 0.1s ease-in-out;
+}
+
+.header-flex-wrapper:hover .header-container::before{
+  transform: scaleX(1.04);
+  /* transform: rotateZ(5deg); */
+  transform-origin: left;
+}
 
 /* Gifts-U-Can-Choose */
 
@@ -384,7 +464,7 @@ body{
 .shop-card,
 .share-card{
   padding: .87rem;
-  max-width: 30rem;
+  max-width: 100%;
   text-align: center;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
@@ -502,6 +582,7 @@ input[type="checkbox"]:disabled {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 1px solid yellow;
 }
 .find-upointz{
   color: black;
