@@ -18,13 +18,14 @@
         </div>
     </header>
     <div class="welcome">
-        <span class="welcome-message">Welcome, Nicolas!</span>
+        <span class="welcome-message">Welcome, Nicholas!</span>
     </div>
     <div class="accordion">
         <!-- PROFILE BUTTON -->
         <button class="accordion-btn profile-btn" id="profile-btn">
             <div class="btn-left">
-                <i class="fa-solid fa-plus icon" id="profile-btn"></i>
+                <i class="fa-solid fa-plus icon plus" id="profile-btn"></i>
+                <i class = "fa-solid fa-minus icon minus" id="profile-btn"></i>
             </div>
             <div class="btn-right">
                 <span>My profile</span>
@@ -103,7 +104,7 @@
             <div class="btn-left">
                 <i class="fa-solid fa-plus icon" id="u-points-btn"></i>
             </div>
-            <div class="btn-right">
+            <div class="btn-right hidden">
                 <span>My upoints</span>
                 <i class="fa-solid fa-hand-holding-heart icon"></i>
             </div>
@@ -111,31 +112,53 @@
         <!-- U POINTS SECTION -->
         <div class="gift-card hidden" id="gift-card-section">
             <table class="gift-card-table mt-3">
-                <tr>
-                  <th>Serial Number</th>
-                  <th>Total</th>
-                  <th>Remaining</th>
+                <tr id = "gift-card-table-heading">
+                    <th>Serial Number</th>
+                    <th>Total</th>
+                    <th>Remaining</th>
                 </tr>
-                <tr>
-                  <td>QWERTY</td>
-                  <td>12</td>
-                  <td>6</td>
-                </tr>
+
                 <tr>
                     <td>QWERTY</td>
                     <td>12</td>
                     <td>6</td>
-                  </tr>
-                  <tr>
+                </tr>
+
+                <tr>
                     <td>QWERTY</td>
                     <td>12</td>
                     <td>6</td>
-                  </tr>
+                </tr>
+
+                <tr>
+                    <td>QWERTY</td>
+                        <td>12</td>
+                        <td>6</td>
+                    </tr>
+
+                    <tr>
+                        <td>QWERTY</td>
+                            <td>12</td>
+                            <td>6</td>
+                        </tr>
+
+                        <tr>
+                            <td>QWERTY</td>
+                                <td>12</td>
+                                <td>6</td>
+                            </tr>
+
+                            <tr>
+                                <td>QWERTY</td>
+                                    <td>12</td>
+                                    <td>6</td>
+                                </tr>
+
               </table>
         </div>
     </div>
     <script src="libs/jquery/jquery.js"></script>
-    <script>
+     <script>
         $( document ).ready(function() {
             $("#profile-btn").on('click', () => {
                 $("#profile-section").toggleClass("hidden");
@@ -143,8 +166,9 @@
 
             $("#u-points-btn").on('click', () => {
                 $("#gift-card-section").toggleClass("hidden");
-            });
         });
+    });
+
     </script>
 </body>
 </html>
