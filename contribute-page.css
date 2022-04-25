@@ -10,11 +10,13 @@
     --holder-step: 350px;
 }
 
-header, .info {
+header,
+.info {
     background-color: var(--primary);
 }
 
-.header-wrapper, .info-wrapper {
+.header-wrapper,
+.info-wrapper {
     width: 99%;
     margin: 0.5%;
     border: 3px solid var(--secondary);
@@ -25,7 +27,7 @@ header, .info {
 
 .info-wrapper {
     margin-top: 4%;
-    height: 765px;
+    height: 96.5%;
 }
 
 .title {
@@ -35,6 +37,12 @@ header, .info {
     text-shadow: -2px 3px #002699;
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
+}
+
+.error-handling {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
 /* HEADER OVERLAY */
@@ -188,11 +196,11 @@ header, .info {
 
 .step-list {
     list-style: none;
-    margin-top: 12%;
+    margin-top: 2%;
 }
 
 .icon {
-    width: 85px;
+    width: 45px;
     height: 85px;
 }
 
@@ -205,9 +213,10 @@ header, .info {
     color: white;
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
-    margin-left: 15px;
-    margin-top: 5px;
-    font-size: 1.1rem;
+    margin-left: 1px;
+    margin-top: 4px;
+    font-size: 1rem;
+    width: 150%;
 }
 
 .step-item {
@@ -290,7 +299,9 @@ header, .info {
     .button992 {
         margin-left: 20% !important;
         margin-right: 20% !important;
-        width: -webkit-fill-available;
+        width: -webkit-fill-available !important;
+        padding: 6px;
+        font-size: 20px;
     }
 }
 
@@ -334,4 +345,9 @@ header, .info {
     font-style: italic;
     text-decoration: underline;
     font-size: 18px;
+    text-align: center;
+}
+
+.hr {
+    opacity: .9;
 }
