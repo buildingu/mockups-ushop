@@ -87,6 +87,7 @@ select {
     --select-color: #8BC5E1;
     --option-bg: #cce7f1;
     --option-color: #4A85A6;
+    
 }
 
 /* ===== PROFILE ===== */
@@ -153,7 +154,7 @@ body {
     align-content: center;
     justify-content: space-between;
     box-shadow: 7px 7px lightgrey;
-    transition: all 0.5s;
+    
 }
 
 .accordion-btn:hover{
@@ -179,16 +180,9 @@ body {
 
  .icon {
     font-size: .9em;
-    padding-top: .1em;
+    padding-top: .3em;
+    padding-right: .3em;
     margin-top: .1em;
-}
-
-.minus::before{
-    display: none;
-}
-
-.minus:target{
-    display: block;
 }
 
 
@@ -332,23 +326,23 @@ body {
 }
 /* gift card */
 
-.gift-card{
-} 
-
-.gift-card-table {
+.history-table {
+    padding-top: 2vmin;
     font-family: Arial, Helvetica, sans-serif;
-    width: 100%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .gift-card-table td, .gift-card-table th {
+  .history-table td, .history-table th {
     padding: 8px;
   }
 
-  .gift-card-table tr:nth-child(even){background-color: #dbdbdb;}
+  .history-table tr:nth-child(even){background-color: #dbdbdb;}
 
-  .gift-card-table tr:hover {background-color: #c9c7c1;}
+  .history-table tr:hover {background-color: #c9c7c1;}
   
-  .gift-card-table th {
+  .history-table th {
     padding-top: 12px;
     padding-bottom: 12px;
     padding-left: 10px;
@@ -358,26 +352,69 @@ body {
     text-emphasis: bold;
 
   }
-
-  .gift-card-table tr:nth-child(odd){
-      border-top: 10px;
-  }
-
-  .gift-card-table th:first-child{
-      border-top-left-radius: 20px;
-  }
-
-  .gift-card-table th:last-child{
-    border-top-right-radius: 20px;
-}
-
-  .gift-card-table td {
+  .history-table td {
       text-align: center;
       font-size: 13.5px;
       padding: 8px;
   }
 
+  .balance-banner{
+    background-color: var(--secondary);
+     width: 80%;
+    margin-top: 10vmin;
+    margin-left: auto;
+    margin-right: auto;
+      /* margin-right: 5vmin; */
+  }
+
+  .UPoint-table {
+    background-color: white;
+    border: 5px #ECC0C0;
+    border-color: #ECC0C0;
+    border-spacing: 2vmin;
+    margin-left:auto;
+    margin-right:auto;
+    width: 99%;
+
+    
+
+}
+
+.UPoint-table tr:first-child{
+    text-align: center;
+    
+}
+
+  #history-btn, #donation-btn{
+    margin-top: 1vmin;
+    box-shadow: 0px 0px lightgrey;
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
   
+  .donation-info{
+      height: 10%;
+      padding:5vmin;
+  }
+
+  .number-of-balance{
+    color: var(--option-color);
+    margin-top: 2vmin; 
+    margin-bottom: 2vmin; 
+  }
+
+  .user-balance{
+
+      border: 3px solid black;
+      
+  }
+
+  #history-btn, #donation-btn{
+      background-color: var(--primary) ;
+  }
 
 /* UTILS */
 .half-row {
