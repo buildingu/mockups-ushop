@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="shopping-item.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="image">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0350/6143/2456/products/shirt3_42087e40-ec89-4265-9aed-b499ee388ef3_540x.png?v=1632501751"/>
+    </div>
+    <div class="description">
+      <div class="item-title">
+        <h1 class="" style=" margin: 0;font-size: 3rem;">
+          <strong>Bubble Tee</strong>
+        </h1>
+        <h3 style="margin: 0; font-size: 1.5rem;">20</h3>
+      </div>
+      <p>
+          Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
+      </p>
+      <div class="selector">
+        <form class="customize-panel">
+          <h3>Color</h3>
+          <input type="radio" name="color" value="red" id="red" checked>
+          <label for="red"> Red</label>
+          <input type="radio" name="color" value="blue" id="blue" checked>
+          <label for="blue"> blue</label>
+          <h3>Size</h3>
+          <input type="radio" name="color" value="small" id="small" checked>
+          <label for="small"> Small</label>
+          <input type="radio" name="color" value="medium" id="medium" checked>
+          <label for="medium"> medium</label>
+          <input type="radio" name="color" value="medium" id="medium" checked>
+          <label for="large"> large</label>
+          <h3>Quanitity: </h3>
+            <label for="Quantity"></label>
+            <input type="range" min="1" max="10" value="1" class="slider" id="quanititySlider">
+            <input type="submit"
+            value="Add to Cart!" class="submit-button"></input>
+        </form>
+            <input type="button"
+            value="Go Back" class="submit-button" id="go-back" onclick="history.back()"></input>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
