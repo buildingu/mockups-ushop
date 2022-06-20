@@ -8,7 +8,6 @@
 }
 
 /* Remove default margin */
-body,
 h1,
 h2,
 h3,
@@ -78,16 +77,13 @@ select {
 /* ===== THEME ===== */
 
 :root {
-    --primary: #5FC5FF;
-    --secondary: #F9FF00;
-    --accent: #B20202;
     --button-color: #699EBC;
     --button-accent: white;
     --content-width: 80%;
     --select-color: #8BC5E1;
     --option-bg: #cce7f1;
     --option-color: #4A85A6;
-    
+    --accent: #B20202;
 }
 
 /* ===== PROFILE ===== */
