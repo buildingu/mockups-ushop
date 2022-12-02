@@ -68,10 +68,10 @@ header:hover .header-overlay {
     transition: .5s ease;
 }
 
-/* header:hover .header-main {
-    opacity: 0;
+header:hover .header-main {
+    opacity: .5;
     transition: .5s ease;
-} */
+}
 
 /*------------------------------------*
       $HEADER-POLAROIDS
