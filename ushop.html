@@ -189,14 +189,14 @@
                                       <div class="form-input d-flex flex-column col-6">
                                           <label for="giftcard" class="form-label">Gift Card Code</label>
                                           <input type="text" name="giftcard" id="giftcard" class="form-control"
-                                              autocomplete="off">
+                                              autocomplete="off" placeholder="Gift-Card-Code">
                                           <div id="cardNumberError" class="input-text input-error">giftcard error</div>
                                       </div>
                                       <!-- EXPIRE -->
                                       <div class="form-input d-flex flex-column col-6">
                                           <label for="email" class="form-label">Email</label>
                                           <input type="text" name="email" id="email" class="form-control"
-                                              autocomplete="off" placeholder="MM/YY">
+                                              autocomplete="off" placeholder="Email">
                                           <div id="emailError" class="input-text input-error">email error</div>
                                       </div>
                                   </div>
@@ -486,6 +486,52 @@
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
   <script src="./js/contribute.js"></script>
 
+  $(document).ready(function() {
+    // Prevent default action of the button with id "btn_submit"
+    $("#btn_submit").click(function(event) {
+        event.preventDefault();
+        
+        // Check the validity of the giftcard
+        var giftcard = $("#giftcard").val();
+        var email = $("#email").val();
+
+    
+        // Send the giftcard code and email to the API
+        $.ajax({
+        type: "POST",
+        url: "http://example.com/api/check_giftcard",
+        data: JSON.stringify({ giftcard: giftcard, email: email }),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function(response) {
+            // Check the validity of the giftcard
+            if (response.validity) {
+            // Get the value of the giftcard
+            var value = response.value;
+    
+            // Set the visibility of products based on the value of the giftcard
+            $(".product").each(function() {
+                var price = $(this).data("price");
+                if (price <= value) {
+                $(this).show();
+                } else {
+                $(this).hide();
+                }
+            });
+    
+            // Only one product can be selected
+            $(".product").click(function() {
+                $(".product").not(this).hide();
+            });
+            } else {
+            // Giftcard is not valid
+            alert("Giftcard is not valid");
+            }
+        }
+        });
+    });
+  });
+  
   <!-- <script defer>
     const UpointzInputElements = document.querySelectorAll('.upointz-input');
     const UpointzLabelElements = document.querySelectorAll('.upointz-label');
